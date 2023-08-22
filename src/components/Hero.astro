@@ -1,0 +1,156 @@
+---
+import Header from './Header.astro';
+---
+
+<main class="hero">
+  <div class="animated-image"></div>
+  <div class="overlay"></div>
+  <div class="hero-content">
+  
+    <div class="text_content">
+      <h2>Enter the</h2>
+      <h1>World of <br /> Exploration</h1>
+      <p>Become an Oil Magnate in a World of NFTs and Blockchain.</p>
+      <button><a href="#">Start Exploring</a></button>
+    </div>
+    <div></div>
+  </div>
+</main>
+
+<style>
+  .hero {
+    min-height: 120vh;
+    background: url('../assets/hero_bg.jpeg') no-repeat center center;
+    position: relative;
+    width: 100%;
+    margin-top: -5rem;
+  }
+
+  .animated-image {
+    position: absolute;
+    right: 0;
+    bottom: 90px;
+    width: 40%;
+    height: 500px;
+    background-image: url('../assets/hero_image.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    animation: moveUpDown 5s linear infinite alternate;
+    /* z-index: 0; */
+  }
+
+  @keyframes moveUpDown {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.6),
+      transparent,
+      transparent,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.4)
+    ), linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1), transparent, transparent, transparent, transparent)
+  }
+
+  .hero-content {
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+  }
+
+  .hero-content .text_content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-bottom: 200px;
+    padding-left: 50px;
+  }
+
+  .text_content h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0;
+    font-family: 'cinzel', serif;
+    color: white;
+    font-weight: 400;
+  }
+
+  .text_content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0;
+    font-family: 'cinzel', serif;
+    color: white;
+    font-weight: 700;
+    text-align: left;
+    line-height: 62px;
+    margin-top: 20px;
+  }
+
+  .text_content p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0;
+    font-family: 'cinzel', serif;
+    color: white;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 20px;
+  }
+
+  .text_content button {
+    margin-top: 20px;
+    background: #f9c74f;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
+    font-weight: 400;
+    text-align: left;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #f9c74f;
+  }
+
+  .text_content button a {
+    color: white;
+    text-decoration: none;
+    font-family: 'cinzel', serif;
+  }
+
+  .text_content button:hover {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.12941176470588237);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.6px);
+    -webkit-backdrop-filter: blur(3.6px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+</style>

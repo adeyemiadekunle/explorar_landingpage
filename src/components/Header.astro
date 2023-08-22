@@ -1,0 +1,76 @@
+---
+import Container from './Container.astro';
+---
+
+<header class="header">
+  <Container>
+    <div class="header_content">
+      <div class="logo_container">
+        <div>Logo</div>
+      </div>
+      <nav class="nav_items">
+        <ul>
+          <li class="nav-item"><a href="#">Home</a></li>
+          <li class="nav-item explorar">
+            <a href="#">Explorar</a>
+          </li>
+          <li class="nav-item"><a href="#">More</a></li>
+          <li class="nav-item"><a href="#">Twitter</a></li>
+          <li class="nav-item"><a href="#">Discord</a></li>
+        </ul>
+      </nav>
+    </div>
+  </Container>
+</header>
+
+<style>
+  .header {
+    padding: 20px 0;
+    height: 5rem;
+    position: relative;
+    z-index: 3;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .header .header_content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .header_content .logo_container {
+    display: flex;
+    align-items: center;
+  }
+
+  .header_content .nav_items ul {
+    display: flex;
+    align-items: center;
+  }
+
+  .header_content .nav_items ul .nav-item {
+    list-style: none;
+    margin-left: 2rem;
+    border: 3px solid white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .header_content .nav_items ul .nav-item:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+
+  .header .nav-item a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: 'cinzel', serif;
+  }
+</style>

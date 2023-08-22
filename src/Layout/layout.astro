@@ -1,0 +1,78 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Montserrat&display=swap" rel="stylesheet">
+    
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <!-- <Testing /> -->
+    </header>
+    <slot />
+    <footer></footer>
+  </body>
+</html>
+<style is:global>
+ 
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  * {
+    font-family: "Montserrat", sans-serif;
+    background-color: transparent;
+    color: #132144;
+    font-size: 16px;
+  }
+
+  body {
+    line-height: normal;
+    font-style: normal;
+    letter-spacing: 0.32px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Webkit (Safari, Chrome, Edge) */
+  /* Note: These properties might not be widely supported or standardized */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #fff;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #132144;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+</style>
