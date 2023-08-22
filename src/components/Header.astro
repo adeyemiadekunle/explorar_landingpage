@@ -1,22 +1,28 @@
 ---
 import Container from './Container.astro';
+import Logo from '../assets/logowhite.png';
+import { FaTwitter, FaDiscord } from 'react-icons/fa';
 ---
 
 <header class="header">
   <Container>
     <div class="header_content">
       <div class="logo_container">
-        <div>Logo</div>
+        <img src={Logo} alt="logo" width="150px" />
       </div>
       <nav class="nav_items">
         <ul>
           <li class="nav-item"><a href="#">Home</a></li>
           <li class="nav-item explorar">
-            <a href="#">Explorar</a>
+            <a href="#">Explore</a>
           </li>
           <li class="nav-item"><a href="#">More</a></li>
-          <li class="nav-item"><a href="#">Twitter</a></li>
-          <li class="nav-item"><a href="#">Discord</a></li>
+          <li class="nav-item social">
+            <a href="#"><FaTwitter size="1.5rem" /></a>
+          </li>
+          <li class="nav-item social">
+            <a href="#"><FaDiscord size="1.5rem" /></a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -25,16 +31,15 @@ import Container from './Container.astro';
 
 <style>
   .header {
-    padding: 20px 0;
-    height: 5rem;
+    padding: 24px 0;
+    height: 6rem;
     position: relative;
-    z-index: 3;
+    z-index: 4;
     /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(2.5px);
     -webkit-backdrop-filter: blur(2.5px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   }
 
   .header .header_content {
@@ -42,6 +47,7 @@ import Container from './Container.astro';
     width: 100%;
     justify-content: space-between;
     height: 100%;
+    align-items: center;
   }
 
   .header_content .logo_container {
@@ -49,8 +55,13 @@ import Container from './Container.astro';
     align-items: center;
   }
 
+  .header_content .logo_container img {
+    cursor: pointer;
+  }
+
   .header_content .nav_items ul {
     display: flex;
+    align-items: center;
     align-items: center;
   }
 
@@ -69,8 +80,16 @@ import Container from './Container.astro';
   .header .nav-item a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     font-family: 'cinzel', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
+  /* .header .nav-item .social {
+    padding: 5px 12px;
+    background-color: white;
+  } */
 </style>
