@@ -1,0 +1,52 @@
+---
+const { href } = Astro.props;
+---
+
+<button class="fantasy-button"  onclick='playClickSound' >
+  <a href={href}>
+    <slot />
+  </a>
+</button>
+
+
+
+<style>
+  .fantasy-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border-top: 8px outset #6b4226;
+    border-left: 8px inset #6b4226;
+    border-right: 8px outset #6b4226;
+    border-bottom: 8px inset #6b4226;
+    background-color: #ffebcd;
+    color: #6b4226;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .fantasy-button:hover {
+    transform: scale(1.05); /* Increase size on hover */
+  }
+
+  .fantasy-button:active {
+    transform: scale(0.95); /* Decrease size on click */
+  }
+
+  .fantasy-button a {
+    text-decoration: none;
+    color: #6b4226;
+    text-decoration: none;
+    font-family: 'cinzel', serif;
+    font-weight: bold;
+  }
+</style>
+
+
+<script  src="../scripts/click.js"></script>

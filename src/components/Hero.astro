@@ -1,5 +1,5 @@
 ---
-import Header from './Header.astro';
+import Button from './Button.astro';
 ---
 
 <main class="hero">
@@ -10,7 +10,7 @@ import Header from './Header.astro';
       <h2>Enter the</h2>
       <h1>World of <br /> Exploration</h1>
       <p>Become an Oil Magnate in a World of NFTs and Blockchain.</p>
-      <button><a href="#">Start Exploring</a></button>
+      <Button href='#'>Start Exploring</Button>
     </div>
     <div></div>
   </div>
@@ -70,6 +70,7 @@ import Header from './Header.astro';
     width: 100%;
     height: 100%;
     max-width: 1400px;
+    padding: 0 24px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -85,8 +86,8 @@ import Header from './Header.astro';
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    padding-bottom: 200px;
-    padding-left: 50px;
+    padding-bottom: 150px;
+    /* padding-left: 50px; */
   }
 
   .text_content h2 {
@@ -119,37 +120,7 @@ import Header from './Header.astro';
     font-weight: 400;
     text-align: left;
     margin-top: 20px;
+    margin-bottom: 30px;  
   }
 
-  .text_content button {
-    margin-top: 20px;
-    background: #f9c74f;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: white;
-    font-weight: 400;
-    text-align: left;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: all 0.3s ease-in-out;
-    border: 1px solid #f9c74f;
-  }
-
-  .text_content button a {
-    color: white;
-    text-decoration: none;
-    font-family: 'cinzel', serif;
-  }
-
-  .text_content button:hover {
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.12941176470588237);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3.6px);
-    -webkit-backdrop-filter: blur(3.6px);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-  }
 </style>

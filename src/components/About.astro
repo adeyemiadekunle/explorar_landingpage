@@ -1,0 +1,251 @@
+---
+import Container from './Container.astro';
+---
+
+<main class="about">
+  <Container>
+    <div class="about_container">
+      <div class="top">
+        <h1>Compete for Resources</h1>
+        <p>
+          The race to uncover oil isn't a solitary endeavor. As you
+          delve into oil fields, you'll encounter other aspiring
+          explorers vying for the same finite resources. The element
+          of competition adds urgency to your decisions, requiring you
+          to balance risk and reward as you strive to be among the
+          first to tap into the oil riches.
+        </p>
+      </div>
+      <div class="bottom">
+        <div class="features">
+          <div class="background-image"></div>
+          <div class="content">
+            <h2>Explorar <br /> Features</h2>
+            <p>
+              "Oil Explorar" offers an immersive experience where
+              players become oil magnates, exploring diverse oil
+              fields, strategically managing resources, collecting NFT
+              cards for customization, and leveraging blockchain
+              technology for secure ownership and transparent
+              transactions in a vibrant community-driven environment.
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="gameplay">
+            <div class="background-image"></div>
+            <div class="content">
+              <h2>Engaging Gameplay</h2>
+              <p>
+                Engage in idle game by making strategic decisions,
+                deploying rigs, and optimizing operations to compete
+                with others in extracting limited resources from a
+                variety of oil fields, all while progressing,
+                upgrading, and dominating the world of virtual oil
+                exploration.
+              </p>
+            </div>
+          </div>
+
+          <div class="gameplay unique-nft">
+            <div class="background-image"></div>
+            <div class="content">
+              <h2>Unique NFT Cards</h2>
+              <p>
+                Experience the uniqueness of "Oil Explorar" through
+                its collectible NFT cards, which allow you to
+                customize your exploration strategy, showcase
+                ownership verified by Base Network, and trade valuable
+                digital assets with fellow players.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</main>
+
+<style>
+  .about {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(
+      45deg,
+      #faf194 0%,
+      #fff 80%,
+      #fff 60%
+    );
+    margin-bottom: 100px;
+  }
+
+  .about_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+  }
+
+  .about_container .top {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about_container .top h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'cinzel', serif;
+    color: #6b4226;
+  }
+
+  .about_container .top p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    width: 90%;
+    text-align: center;
+  }
+
+  .about_container .bottom {
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 90px;
+  }
+
+  .bottom .features {
+    width: 400px;
+    height: 420px;
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+   
+  }
+
+  .bottom .features .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/map12.jpeg');
+    background-size: cover;
+    transition: transform 0.3s ease-in-out;
+    /* z-index: -1; */
+  }
+
+  .bottom .features:hover .background-image {
+    transform: scale(1.1);
+  }
+
+  .bottom .features .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .bottom .features .content h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'cinzel', serif;
+    color: #fff;
+    line-height: 42px;
+  }
+
+  .bottom .features .content p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    width: 90%;
+    color: #fff;
+  }
+
+  .bottom .column {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    margin-left: 30px;
+    height: 100%;
+    gap: 30px;
+  }
+
+  .bottom .gameplay {
+    width: 600px;
+    height: 220px;
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bottom .gameplay .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/map7.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .bottom .gameplay .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .bottom .unique-nft .background-image {
+    background-image: url('../assets/land_5.jpeg');
+    background-position: center;
+  }
+
+  .bottom .gameplay:hover .background-image {
+    transform: scale(1.1);
+  }
+
+  .bottom .gameplay .content h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+    font-family: 'cinzel', serif;
+    color: #fff;
+    line-height: 42px;
+  }
+
+  .bottom .gameplay .content p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+  }
+</style>
