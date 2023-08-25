@@ -1,0 +1,116 @@
+---
+import Container from './Container.astro';
+import Faq from './Faq.astro';
+import FaqData from '../Json/faq.json'
+
+interface Faq {
+  question: string;
+  answer: string;
+}
+---
+
+<section class="gameplay">
+  <Container>
+    <div class="top">
+      <h1>Gameplay FAQ: <br /> Your Journey as an Oil Explorer</h1>
+    </div>
+    <div class="gameplay_content">
+      <div class="inner">
+        <div class="faq">
+          <div class="content">
+             {
+              FaqData.faq.map((faq: Faq) => (
+                <Faq question={faq.question} answer={faq.answer} />
+              ))
+             }
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<style>
+  .gameplay {
+    min-height: 120vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+    background: linear-gradient(
+      45deg,
+      #faf194 0%,
+      #fff 80%,
+      #fff 60%
+    );
+  }
+
+  .gameplay .top {
+    width: 100%;
+    margin-bottom: 70px;
+    margin-top: 70px;
+  }
+
+  .gameplay .top h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: #6b4226;
+    text-align: start;
+    font-weight: 700;
+    font-family: 'cinzel', serif;
+  }
+
+  .gameplay .gameplay_content {
+    width: 85%;
+    height: 600px;
+    position: relative;
+    background: #6b4226;
+  }
+
+  .gameplay .gameplay_content .inner {
+    border: 5px solid #6b4226;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    background: white;
+    padding: 20px 10px;
+  }
+
+  .gameplay .gameplay_content .inner .faq {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-color: #6b4226;
+    padding: 20px;
+  }
+
+  /* Target the scrollbar track */
+  .gameplay .gameplay_content .inner .faq::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Change this to your desired track color */
+    border-radius: 20px;
+  }
+
+  /* Target the scrollbar thumb */
+  .gameplay .gameplay_content .inner .faq::-webkit-scrollbar-thumb {
+    background-color: #6b4226;
+    height: 100px;
+    border-radius: 20px; /* Change this to your desired thumb color */
+  }
+
+  /* Optionally, target the scrollbar corner */
+  .gameplay .gameplay_content .inner .faq::-webkit-scrollbar-corner {
+    background-color: #f1f1f1; /* Change this to your desired corner color */
+  }
+
+  .gameplay_content .inner .faq .content {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+</style>

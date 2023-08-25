@@ -1,0 +1,35 @@
+---
+const {image} = Astro.props;
+---
+
+<div class="card">
+    <div class="inner-card"> 
+        <img src={image} alt="">
+    </div>
+</div>
+
+<style>
+.card {
+    width: 250px;
+    padding: 5px;
+    height: 250px;
+    border-radius: 10px;
+    background: #eaeaea;
+}
+
+.card .inner-card {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+    
+}
+
+.card .inner-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+</style>

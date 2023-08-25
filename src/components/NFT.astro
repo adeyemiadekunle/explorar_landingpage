@@ -1,0 +1,115 @@
+---
+import Container from './Container.astro';
+import NFTCard from './NFTCard.astro';
+import hero_image from '../assets/hero_image.png';
+---
+
+<section class="nft">
+  <div class="overlay"></div>
+  <div class="nft-content">
+    <div class="top">
+      <h2>Unleash the Power of NFT Cards and collectibles</h2>
+      <p>
+        Depict a digital card with unique attributes, surrounded by
+        elements like oil fields, rigs, and workers.
+      </p>
+    </div>
+
+    <div class="bottom">
+      <div class="image_container">
+        <img src={hero_image} alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .nft {
+    min-height: 100vh;
+    background: url('../assets/nft_bg.jpeg') no-repeat center center /
+      cover;
+    position: relative;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .nft-content {
+    width: 90%;
+    height: 100%;
+    padding: 0 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 0;
+    display: flex;
+  }
+
+  .nft-content .top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .nft-content .top h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'cinzel', serif;
+    color: #fff;
+  }
+
+  .nft-content .top p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-align: center;
+  }
+
+  .nft-content .bottom {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nft-content .bottom .image_container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .nft-content .bottom .image_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: moveUpDown 5s linear infinite alternate;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .nft-content .bottom .image_container img:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes moveUpDown {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-30px);
+    }
+  }
+
+
+</style>

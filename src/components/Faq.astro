@@ -1,0 +1,83 @@
+---
+const { question, answer } = Astro.props;
+---
+
+<div class="faq">
+  <div class="question active">
+    <h3>
+      {question}<span class="icon">+</span>
+    </h3>
+    <div class="answer">
+      <p>
+        {answer}
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .faq {
+    width: 100%;
+    height: 100%;
+  }
+
+  .question {
+    margin-bottom: 10px;
+  }
+
+  .question h3 {
+    cursor: pointer;
+    background-color: #f1f1f1;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Align the icon to the right */
+    align-items: center; /* Vertically center the icon */
+    font-size: 1.4rem;
+    font-family: 'cinzel', serif;
+    color: #6b4226;
+  }
+
+  .icon {
+    transition: transform 0.3s ease-in-out;
+    font-size: 2rem;
+  }
+
+  .answer {
+    display: none;
+    padding: 20px 10px 20px 10px;
+    border: 1px solid #ddd;
+    font-size: 1.5rem;
+    line-height: 24px;
+    transition: all 0.3s ease-in-out;
+  }
+</style>
+
+
+<script>
+    const questions = document.querySelectorAll('.question');
+
+    questions.forEach((question: HTMLElement) => {
+        const toggleButton = question.querySelector('h3') as HTMLElement;
+        const answer = question.querySelector('.answer') as HTMLElement;
+        const icon = question.querySelector('.icon') as HTMLElement;
+
+        toggleButton.addEventListener('click', () => {
+            if (!question.classList.contains('active')) {
+                questions.forEach((q: HTMLElement) => {
+                    q.classList.remove('active');
+                    (q.querySelector('.answer') as HTMLElement).style.display = 'none';
+                    (q.querySelector('.icon') as HTMLElement).style.transform = 'rotate(0deg)'; // Reset other icons
+                });
+
+                question.classList.add('active');
+                answer.style.display = 'block';
+                icon.style.transform = 'rotate(45deg)'; // Animate to "x"
+            } else {
+                question.classList.remove('active');
+                answer.style.display = 'none';
+                icon.style.transform = 'rotate(0deg)'; // Animate to "+"
+            }
+        });
+    });
+
+</script>

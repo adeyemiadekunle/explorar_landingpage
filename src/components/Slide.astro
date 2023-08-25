@@ -1,0 +1,100 @@
+---
+---
+
+<div>
+  <div class="slider-container">
+    <div class="slider">
+      <div class="slide">Slide 1</div>
+      <div class="slide">Slide 2</div>
+      <div class="slide">Slide 3</div>
+      <div class="slide">Slide 4</div>
+      <div class="slide">Slide 5</div>
+      <!-- Add more slides as needed -->
+    </div>
+  </div>
+  <div class="indicators">
+    <div class="indicator active"></div>
+    <div class="indicator"></div>
+    <div class="indicator"></div>
+    <div class="indicator"></div>
+    <div class="indicator"></div>
+    <!-- Add more indicators as needed -->
+  </div>
+</div>
+
+<style>
+  .slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slider {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .slide {
+    flex: 0 0 calc(100% / 3);
+    min-width: calc(100% / 3);
+    height: 300px;
+    background-color: #ccc;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #888;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+
+  .indicator.active {
+    background-color: #333;
+  }
+</style>
+
+<script>
+    const slider = document.querySelector(".slider") as HTMLElement;
+    const indicators = document.querySelectorAll(".indicator");
+    const slides = document.querySelectorAll(".slide");
+    const slideWidth = slides[0].clientWidth;
+
+    let currentSlide = 0;
+
+    function goToSlide(index: number) {
+        const offset = (slider.clientWidth - slideWidth) / 2;
+        const slidePosition = index * slideWidth;
+        slider.style.transform = `translateX(-${slidePosition + offset}px)`;
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle("active", i === index);
+        });
+        currentSlide = index;
+    }
+
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener("click", () => {
+            goToSlide(index);
+        });
+    });
+
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % indicators.length;
+        goToSlide(currentSlide);
+    }, 3000); // Auto slide every 3 seconds
+
+    // Initial position
+    goToSlide(currentSlide);
+    
+  </script>
