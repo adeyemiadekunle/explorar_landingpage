@@ -73,11 +73,14 @@ import Container from './Container.astro';
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    background: linear-gradient(
-      45deg,
-      #faf194 0%,
-      #fff 80%,
-      #fff 60%
+
+    background-image: linear-gradient(
+      to right top,
+      #8f3433,
+      #b06476,
+      #c598b1,
+      #dbccde,
+      #ffffff
     );
   }
 
@@ -87,8 +90,6 @@ import Container from './Container.astro';
     height: 100%;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
   }
 
   .about_container .top {
@@ -104,7 +105,8 @@ import Container from './Container.astro';
     font-weight: 700;
     margin-bottom: 1rem;
     font-family: 'cinzel', serif;
-    color: #6b4226;
+    /* color: #6b4226; */
+    color: #8f3433;
   }
 
   .about_container .top p {
@@ -131,7 +133,6 @@ import Container from './Container.astro';
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
-   
   }
 
   .bottom .features .background-image {
@@ -235,7 +236,7 @@ import Container from './Container.astro';
   .bottom .gameplay .content h2 {
     font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     font-family: 'cinzel', serif;
     color: #fff;
     line-height: 42px;

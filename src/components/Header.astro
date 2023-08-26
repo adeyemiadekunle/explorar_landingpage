@@ -14,7 +14,7 @@ import { FaTwitter, FaDiscord } from 'react-icons/fa';
         <ul>
           <li class="nav-item"><a href="#">Home</a></li>
           <li class="nav-item explorar">
-            <a href="#">Explore</a>
+            <a href="#">play</a>
           </li>
           <li class="nav-item"><a href="#" target="_blank">More</a></li>
           <li class="nav-item social">
@@ -31,15 +31,15 @@ import { FaTwitter, FaDiscord } from 'react-icons/fa';
 
 <style>
   .header {
-    padding: 24px 0;
-    height: 6rem;
-    position: relative;
+    padding: 12px 0;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #04121d;
     z-index: 4;
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.03);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(2.5px);
-    -webkit-backdrop-filter: blur(2.5px);
+
   }
 
   .header .header_content {
@@ -68,13 +68,11 @@ import { FaTwitter, FaDiscord } from 'react-icons/fa';
   .header_content .nav_items ul .nav-item {
     list-style: none;
     margin-left: 2rem;
-    border: 3px solid white;
-    padding: 5px 10px;
-    border-radius: 5px;
   }
 
   .header_content .nav_items ul .nav-item:hover {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    color: #fff;
+    
   }
 
   .header .nav-item a {
@@ -86,6 +84,7 @@ import { FaTwitter, FaDiscord } from 'react-icons/fa';
     display: flex;
     align-items: center;
     justify-content: center;
+    background: transparent;
   }
 
  
