@@ -1,7 +1,6 @@
 ---
 import Button from './Button.astro';
 import Container from './Container.astro';
-import Base from '../assets/base.webp';
 ---
 
 <main class="hero">
@@ -11,10 +10,7 @@ import Base from '../assets/base.webp';
         <h2>Enter the</h2>
         <h1>World of <br /> Exploration</h1>
         <p>
-          Become an Oil Magnate in a World of NFTs on Base <img
-            src={Base}
-            alt=""
-          /> Blockchain.
+          Become an Oil Magnate in a World of NFTs on Base Blockchain.
         </p>
         <Button href="#">Start Exploring</Button>
       </div>
@@ -135,12 +131,7 @@ import Base from '../assets/base.webp';
     margin-bottom: 30px;
   }
 
-  .text_content p img {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
+
 
   @media screen and (max-width: 992px) {
     .hero {
