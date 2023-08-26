@@ -8,15 +8,23 @@ import { FaTwitter, FaDiscord } from 'react-icons/fa';
   <Container>
     <div class="header_content">
       <div class="logo_container">
-        <img src={Logo} alt="logo"  />
+        <img src={Logo} alt="logo" />
       </div>
-      <nav class="nav_items">
+
+      <nav class="nav_items menu" id="menu">
+        <div class="close" id="close">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
         <ul>
           <li class="nav-item explorar">
             <a href="#">play</a>
           </li>
           <li class="nav-item">
-            <a href="https://docs.oilexplorar.xyz/" target="_blank">Docs</a>
+            <a href="https://docs.oilexplorar.xyz/" target="_blank"
+              >Docs</a
+            >
           </li>
           <li class="nav-item social">
             <a href="https://twitter.com/oil_explorar" target="_blank"
@@ -29,6 +37,11 @@ import { FaTwitter, FaDiscord } from 'react-icons/fa';
           </li>
         </ul>
       </nav>
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
     </div>
   </Container>
 </header>
@@ -44,7 +57,6 @@ import { FaTwitter, FaDiscord } from 'react-icons/fa';
     background: #04121d;
     z-index: 4;
     display: flex;
-
   }
 
   .header .header_content {
@@ -92,14 +104,105 @@ import { FaTwitter, FaDiscord } from 'react-icons/fa';
     background: transparent;
   }
 
+  .header_content .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .header_content .hamburger .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+  }
 
   @media screen and (max-width: 768px) {
-    .nav-item {
+    .menu {
       display: none;
+      flex-direction: column;
+      width: 80%;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 400px;
+      z-index: 20;
+      background: #04121d;
+      transition: flex 0.3s ease-in-out;
+      color: #fff;
+      padding: 12px;
+    }
+    .menu.active {
+      display: flex;
+    }
+
+    .menu .close {
+      justify-content: flex-end;
+      margin-left: auto;
+      padding: 1rem;
+      cursor: pointer;
+    }
+
+    .menu .close .bar {
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      margin: 3px 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .close .bar:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .close .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .close .bar:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
     }
 
     .header_content .logo_container img {
       width: 120px;
     }
+
+    .header_content .hamburger {
+      display: flex;
+    }
+
+    .menu ul {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      margin-top: 30px;
+      padding-left: 12px;
+    }
+
+    .menu ul .nav-item {
+      margin: 1rem 0;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+    }
+
   }
 </style>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('menu');
+  const close = document.getElementById('close');
+
+  hamburger.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    hamburger.classList.toggle('active');
+  });
+
+  close.addEventListener('click', () => {
+    // Use addEventListener here
+    menu.classList.remove('active'); // You only need to remove the 'active' class
+    hamburger.classList.remove('active'); // Same here
+  });
+</script>
