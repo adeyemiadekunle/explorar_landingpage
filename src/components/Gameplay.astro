@@ -1,7 +1,7 @@
 ---
 import Container from './Container.astro';
 import Faq from './Faq.astro';
-import FaqData from '../Json/faq.json'
+import FaqData from '../Json/faq.json';
 
 interface Faq {
   question: string;
@@ -15,15 +15,26 @@ interface Faq {
       <h1>Gameplay FAQ: <br /> Your Journey as an Oil Explorer</h1>
     </div>
     <div class="gameplay_content">
-      <div class="inner">
+      <div class="inner desktop">
         <div class="faq">
           <div class="content">
-             {
+            {
               FaqData.faq.map((faq: Faq) => (
                 <Faq question={faq.question} answer={faq.answer} />
               ))
              }
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="inner mobile">
+      <div class="faq">
+        <div class="content">
+          {
+            FaqData.faq.map((faq: Faq) => (
+              <Faq question={faq.question} answer={faq.answer} />
+            ))
+          }
         </div>
       </div>
     </div>
@@ -112,5 +123,54 @@ interface Faq {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+  }
+
+  .gameplay .mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .gameplay .top h1 {
+      font-size: 2rem;
+    }
+
+    .gameplay .gameplay_content {
+      display: none;
+    }
+
+    .gameplay .mobile {
+      display: block;
+      border: 5px solid #8f3433;
+      width: 100%;
+      height: 500px;
+      background: white;
+      padding: 20px 5px;
+    }
+
+    .gameplay .mobile .faq {
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll;
+      scrollbar-color: #6b4226;
+      padding: 10px;
+    }
+
+    /* Target the scrollbar track */
+    .gameplay .mobile .faq::-webkit-scrollbar-track {
+      background-color: #f1f1f1; /* Change this to your desired track color */
+      border-radius: 20px;
+    }
+
+    /* Target the scrollbar thumb */
+    .gameplay .mobile .faq::-webkit-scrollbar-thumb {
+      background-color: #8f3433;
+      height: 100px;
+      border-radius: 20px; /* Change this to your desired thumb color */
+    }
+
+    /* Optionally, target the scrollbar corner */
+    .gameplay .mobile.faq::-webkit-scrollbar-corner {
+      background-color: #f1f1f1; /* Change this to your desired corner color */
+    }
   }
 </style>

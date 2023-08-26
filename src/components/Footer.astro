@@ -1,0 +1,93 @@
+---
+import Container from './Container.astro';
+import { FaTwitter, FaDiscord } from 'react-icons/fa';
+import LogoWhite from '../assets/logowhite.png';
+---
+
+<section class="footer">
+  <Container>
+    <div class="footer_container">
+      <div class="logo_container">
+        <img src={LogoWhite} alt="" />
+        <p>
+          CopyRight © 2023 Oil Explorar. All Rights Reserved. <br />
+        </p>
+      </div>
+      <div class="social">
+        <a href="https://twitter.com/oil_explorar" target="_blank"
+          ><FaTwitter size="2rem" /></a
+        >
+        <a href="#" target="_blank"><FaDiscord size="2rem" /></a>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<style>
+  .footer {
+    background-color: #04121d;
+    height: 40vh;
+  }
+
+  .footer_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40vh;
+    width: 100%;
+  }
+
+  .footer_container .logo_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+  }
+
+  .footer_container .logo_container img {
+    width: 150px;
+    /* height: 100%; */
+  }
+
+  .footer_container .logo_container p {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top: 1rem;
+  }
+
+  .footer_container .social {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem;
+    color: #fff;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 768px) {
+    .footer {
+      height: 30vh;
+    }
+
+    .footer_container {
+      flex-direction: column;
+      height: 30vh;
+      padding-top: 30px;
+    }
+
+    .footer_container .logo_container img {
+    width: 120px;
+    }
+
+    .footer_container .logo_container p {
+      width: 80%;
+    }
+
+    .footer_container .social {
+      justify-content: flex-start;
+    }
+  }
+</style>

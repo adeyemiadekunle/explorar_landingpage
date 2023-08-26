@@ -8,20 +8,24 @@ import { FaTwitter, FaDiscord } from 'react-icons/fa';
   <Container>
     <div class="header_content">
       <div class="logo_container">
-        <img src={Logo} alt="logo" width="150px" />
+        <img src={Logo} alt="logo"  />
       </div>
       <nav class="nav_items">
         <ul>
-          <li class="nav-item"><a href="#">Home</a></li>
           <li class="nav-item explorar">
             <a href="#">play</a>
           </li>
-          <li class="nav-item"><a href="#" target="_blank">More</a></li>
-          <li class="nav-item social">
-            <a href="https://twitter.com/oil_explorar" target="_blank"><FaTwitter size="1.5rem" /></a>
+          <li class="nav-item">
+            <a href="https://docs.oilexplorar.xyz/" target="_blank">Docs</a>
           </li>
           <li class="nav-item social">
-            <a href="#" target="_blank"><FaDiscord size="1.5rem" /></a>
+            <a href="https://twitter.com/oil_explorar" target="_blank"
+              ><FaTwitter size="1.5rem" /></a
+            >
+          </li>
+          <li class="nav-item social">
+            <a href="#" target="_blank"><FaDiscord size="1.5rem" /></a
+            >
           </li>
         </ul>
       </nav>
@@ -39,6 +43,7 @@ import { FaTwitter, FaDiscord } from 'react-icons/fa';
     right: 0;
     background: #04121d;
     z-index: 4;
+    display: flex;
 
   }
 
@@ -57,6 +62,7 @@ import { FaTwitter, FaDiscord } from 'react-icons/fa';
 
   .header_content .logo_container img {
     cursor: pointer;
+    width: 150px;
   }
 
   .header_content .nav_items ul {
@@ -72,7 +78,6 @@ import { FaTwitter, FaDiscord } from 'react-icons/fa';
 
   .header_content .nav_items ul .nav-item:hover {
     color: #fff;
-    
   }
 
   .header .nav-item a {
@@ -87,5 +92,14 @@ import { FaTwitter, FaDiscord } from 'react-icons/fa';
     background: transparent;
   }
 
- 
+
+  @media screen and (max-width: 768px) {
+    .nav-item {
+      display: none;
+    }
+
+    .header_content .logo_container img {
+      width: 120px;
+    }
+  }
 </style>
