@@ -1,6 +1,7 @@
 ---
 import Container from './Container.astro';
-import { FaTwitter, FaDiscord } from 'react-icons/fa';
+import X from '../assets/twitter-x-alt.svg';
+import Discord from '../assets/discord.svg';
 import LogoWhite from '../assets/logowhite.png';
 ---
 
@@ -15,9 +16,13 @@ import LogoWhite from '../assets/logowhite.png';
       </div>
       <div class="social">
         <a href="https://twitter.com/oil_explorar" target="_blank"
-          ><FaTwitter size="2rem" /></a
+          >
+          <img src={X} alt="">
+          </a
         >
-        <a href="#" target="_blank"><FaDiscord size="2rem" /></a>
+        <a href="#" target="_blank">
+          <img src={Discord} alt="">
+        </a>
       </div>
     </div>
   </Container>

@@ -1,7 +1,8 @@
 ---
 import Container from './Container.astro';
 import Logo from '../assets/logowhite.png';
-import { FaTwitter, FaDiscord } from 'react-icons/fa';
+import X from '../assets/twitter-x-alt.svg';
+import Discord from '../assets/discord.svg';
 ---
 
 <header class="header">
@@ -28,11 +29,15 @@ import { FaTwitter, FaDiscord } from 'react-icons/fa';
           </li>
           <li class="nav-item social">
             <a href="https://twitter.com/oil_explorar" target="_blank"
-              ><FaTwitter size="1.5rem" /></a
+              >
+              <img src={X} alt="x">
+              </a
             >
           </li>
           <li class="nav-item social">
-            <a href="#" target="_blank"><FaDiscord size="1.5rem" /></a
+            <a href="#" target="_blank">
+              <img src={Discord} alt="discord">
+              </a
             >
           </li>
         </ul>
@@ -57,6 +62,7 @@ import { FaTwitter, FaDiscord } from 'react-icons/fa';
     background: #04121d;
     z-index: 4;
     display: flex;
+    color: white;
   }
 
   .header .header_content {
@@ -103,6 +109,8 @@ import { FaTwitter, FaDiscord } from 'react-icons/fa';
     justify-content: center;
     background: transparent;
   }
+
+ 
 
   .header_content .hamburger {
     display: none;
